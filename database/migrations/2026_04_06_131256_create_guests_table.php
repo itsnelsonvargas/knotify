@@ -29,6 +29,7 @@ return new class extends Migration
     
             // Use foreignId for better Laravel integration
             $table->foreignId('affiliation_id')->nullable()->constrained('affiliations')->onDelete('set null');
+            $table->foreignId('role_id')->nullable()->constrained('roles')->onDelete('set null');
             
             $table->date('date_confirmed')->nullable(); 
             $table->boolean('is_allowed_to_invite')->default(false); 
